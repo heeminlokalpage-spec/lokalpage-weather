@@ -22,7 +22,7 @@ export default function Home() {
           marginBottom: 12,
           fontWeight: 700,
         }}>
-          🌴 LOKALPAGE 날씨 위젯 미리보기
+          🌴 LOKALPAGE 날씨 아이콘(버튼) 구현
         </p>
         <WeatherWidget />
       </div>
