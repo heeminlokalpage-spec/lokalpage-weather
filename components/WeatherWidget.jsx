@@ -1,5 +1,3 @@
-// v2
-
 import { useState, useEffect, useRef } from "react";
 
 const LOCATIONS = {
@@ -238,34 +236,22 @@ export default function WeatherWidget() {
                     <span style={{ color:"#fff", fontSize:13, fontWeight:800, letterSpacing:1 }}>LIVE</span>
                     <span style={{ color:"#bbb", fontSize:13, fontWeight:700 }}>{liveLabel}</span>
                   </div>
-                  <div style={{ position:"relative", paddingBottom:"56.25%", height:0, overflow:"hidden" }}>
+                  <div style={{ position:"relative", overflow:"hidden", height:160 }}>
                     <iframe
                       key={loc}
                       src={liveUrl}
                       title={`${LOCATIONS[loc].name} 라이브`}
                       style={{
                         position:"absolute",
-                        top:"-60px",
-                        left:"-2px",
-                        width:"calc(100% + 4px)",
-                        height:"calc(100% + 120px)",
+                        top:"-55px",
+                        left:0,
+                        width:"100%",
+                        height:"calc(100% + 100px)",
                         border:"none",
-                        pointerEvents:"none",
                       }}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
                     />
-                    <div style={{
-                      position:"absolute", top:0, left:0,
-                      width:"100%", height:60,
-                      background:"#111",
-                      zIndex:2,
-                    }} />
-                    <div style={{
-                      position:"absolute", bottom:0, left:0,
-                      width:"100%", height:40,
-                      background:"#111",
-                      zIndex:2,
-                    }} />
                   </div>
                 </div>
               </>
