@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 
 const LOCATIONS = {
-  cebu:  { lat: 10.3157, lng: 123.8854, name: "세부",  emoji: "🌴", label: "CEBU",  liveUrl: "https://www.youtube.com/embed/oitazgXYjhc?autoplay=1&mute=1", liveLabel: "모알보알 앞바다" },
-  bohol: { lat: 9.6496,  lng: 123.8530, name: "보홀",  emoji: "🐟", label: "BOHOL", liveUrl: "https://www.youtube.com/embed/ZS_LhvB7V-w?autoplay=1&mute=1", liveLabel: "알로나 비치 입구" },
-  bali:  { lat: -8.6500, lng: 115.2167, name: "발리",  emoji: "🌺", label: "BALI",  liveUrl: "https://www.youtube.com/embed/L1duJDAqbJY?autoplay=1&mute=1",  liveLabel: "발리 라이브" },
+  cebu:  { lat: 10.3157, lng: 123.8854, name: "세부",  emoji: "🌴", label: "CEBU",  liveUrl: "https://www.youtube.com/embed/oitazgXYjhc?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1", liveLabel: "모알보알 앞바다" },
+  bohol: { lat: 9.6496,  lng: 123.8530, name: "보홀",  emoji: "🐟", label: "BOHOL", liveUrl: "https://www.youtube.com/embed/ZS_LhvB7V-w?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1", liveLabel: "알로나 비치 입구" },
+  bali:  { lat: -8.6500, lng: 115.2167, name: "발리",  emoji: "🌺", label: "BALI",  liveUrl: "https://www.youtube.com/embed/L1duJDAqbJY?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1",  liveLabel: "발리 라이브" },
 };
 
 const WMO = {
@@ -236,15 +236,34 @@ export default function WeatherWidget() {
                     <span style={{ color:"#fff", fontSize:13, fontWeight:800, letterSpacing:1 }}>LIVE</span>
                     <span style={{ color:"#bbb", fontSize:13, fontWeight:700 }}>{liveLabel}</span>
                   </div>
-                  <div style={{ position:"relative", paddingBottom:"56.25%", height:0 }}>
+                  <div style={{ position:"relative", paddingBottom:"56.25%", height:0, overflow:"hidden" }}>
                     <iframe
                       key={loc}
                       src={liveUrl}
                       title={`${LOCATIONS[loc].name} 라이브`}
-                      style={{ position:"absolute", top:0, left:0, width:"100%", height:"100%", border:"none" }}
+                      style={{
+                        position:"absolute",
+                        top:"-60px",
+                        left:"-2px",
+                        width:"calc(100% + 4px)",
+                        height:"calc(100% + 120px)",
+                        border:"none",
+                        pointerEvents:"none",
+                      }}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
                     />
+                    <div style={{
+                      position:"absolute", top:0, left:0,
+                      width:"100%", height:60,
+                      background:"#111",
+                      zIndex:2,
+                    }} />
+                    <div style={{
+                      position:"absolute", bottom:0, left:0,
+                      width:"100%", height:40,
+                      background:"#111",
+                      zIndex:2,
+                    }} />
                   </div>
                 </div>
               </>
