@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 
 const LOCATIONS = {
-  cebu:  { lat: 10.3157, lng: 123.8854, name: "세부",  emoji: "🌴", label: "CEBU",  liveUrl: "https://www.youtube.com/embed/oitazgXYjhc?autoplay=1&mute=1", liveLabel: "모알보알 앞바다" },
-  bohol: { lat: 9.6496,  lng: 123.8530, name: "보홀",  emoji: "🐟", label: "BOHOL", liveUrl: "https://www.youtube.com/embed/ZS_LhvB7V-w?autoplay=1&mute=1", liveLabel: "알로나 비치 입구" },
-  bali:  { lat: -8.6500, lng: 115.2167, name: "발리",  emoji: "🌺", label: "BALI",  liveUrl: "https://www.youtube.com/embed/L1duJDAqbJY?autoplay=1&mute=1",  liveLabel: "발리 라이브" },
+  cebu:  { lat: 10.3157, lng: 123.8854, name: "세부",  emoji: "🌴", label: "CEBU",  liveUrl: "https://www.youtube.com/embed/oitazgXYjhc?autoplay=1&mute=1", liveLabel: "Moalboal Beach" },
+  bohol: { lat: 9.6496,  lng: 123.8530, name: "보홀",  emoji: "🐟", label: "BOHOL", liveUrl: "https://www.youtube.com/embed/ZS_LhvB7V-w?autoplay=1&mute=1", liveLabel: "Alona Beach Entrance Street" },
+  bali:  { lat: -8.6500, lng: 115.2167, name: "발리",  emoji: "🌺", label: "BALI",  liveUrl: "https://www.youtube.com/embed/L1duJDAqbJY?autoplay=1&mute=1",  liveLabel: "Bali Skyline View" },
 };
 
 const WMO = {
